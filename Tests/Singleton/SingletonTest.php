@@ -1,9 +1,4 @@
 <?php
-/**
- * Created by Sharkzt
- * Date: 10/9/16
- * Time: 1:48 PM
- */
 
 namespace Sharkzt\Fibonacci\Tests\Singleton;
 
