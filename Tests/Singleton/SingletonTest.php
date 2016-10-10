@@ -121,7 +121,6 @@ class SingletonTest extends \PHPUnit_Framework_TestCase
             $mock,
             $mock->setCount(4)
         );
-        $this->assertSame($mock, $mock->setCount(4));
     }
 
     public function testGetSeries_With11_ReturnArray() {

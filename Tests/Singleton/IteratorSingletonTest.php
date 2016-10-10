@@ -89,7 +89,8 @@ class IteratorSingletonTest extends \PHPUnit_Framework_TestCase
             $mock,
             $mock->setCount(4)
         );
-        $this->assertSame($mock, $mock->setCount(4));
+        $fib = new FibonacciIterator();
+        $this->assertEquals($fib->setCount(4), new FibonacciIterator(4));
     }
 
     public function testGetSeries_With11_ReturnArray() {
