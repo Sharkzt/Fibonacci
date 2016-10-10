@@ -81,6 +81,17 @@ class IteratorSingletonTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($fibonacci->initialize());
     }
 
+    public function testSetCount_With4_ReturnObject() {
+        $mock = $this->createMock(FibonacciIterator::class);
+        $mock->expects($this->any())->method('setCount')->will($this->returnValue($mock));
+        $mock->number = 4;
+        $this->assertEquals(
+            $mock,
+            $mock->setCount(4)
+        );
+        $this->assertSame($mock, $mock->setCount(4));
+    }
+
     public function testGetSeries_With11_ReturnArray() {
         $mock = $this->createMock(FibonacciIterator::class);
         $series = [

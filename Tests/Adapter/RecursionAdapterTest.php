@@ -28,6 +28,18 @@ class RecursionAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertObjectHasAttribute('fibonacci', $fibonacci);
     }
 
+    public function testSetCount_With4_ReturnObject() {
+        $mock = $this->createMock(Fibonacci::class);
+        $mock->expects($this->any())->method('setCount')->will($this->returnValue($mock));
+        $mock->number = 4;
+        $fibonacci = new FibonacciRecursionAdapter($mock);
+        $this->assertEquals(
+            $mock,
+            $fibonacci->setCount(4)
+        );
+        $this->assertSame($mock, $fibonacci->setCount(4));
+    }
+
     public function testGetSeries_With11_ReturnArray() {
         $mock = $this->createMock(Fibonacci::class);
         $series = [
