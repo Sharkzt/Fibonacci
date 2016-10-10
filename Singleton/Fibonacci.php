@@ -31,6 +31,16 @@ class Fibonacci implements FibonacciInterface
     }
 
     /**
+     * Set count of series
+     * @param int $number
+     * @return mixed
+     */
+    public function setCount(int $number) {
+        $this->number = $number;
+        return $this;
+    }
+
+    /**
      * Call calculation of fibonacci series of certain length
      * @return bool
      */

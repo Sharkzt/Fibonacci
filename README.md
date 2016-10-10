@@ -23,13 +23,37 @@ Usage Examples
 ### Singleton
 
 ``` php
+//get fibonacci series via class with recursion approach
+$fibonacciWithRecursion = new \Sharkzt\Fibonacci\Singleton\Fibonacci(11);
+return $fibonacciWithRecursion->getSeries();
 
-$arr = new \Sharkzt\Fibonacci\Singleton\Fibonacci(11);
-return $arr->getSeries();
+//get fibonacci series via class with iteration approach 
+$fibonacciWithIteration = new \Sharkzt\Fibonacci\Singleton\FibonacciIterator(11);
+$fibonacciWithIteration->initialize();
+return $fibonacciWithIteration->getSeries();
 
 ```
 
-Above code returns [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55].
+Code above will return [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55].
+
+### Adapter
+
+``` php
+//get fibonacci series via iterator adapter
+$fibonacciIteratorAdapter = new FibonacciIteratorAdapter(new FibonacciIterator());
+$fibonacciIteratorAdapter->setCount(11);
+$fibonacciIteratorAdapter->initialize();
+return $fibonacciIteratorAdapter->getSeries();
+
+//get fibonacci series via recursion adapter
+$fibonacciIteratorAdapter = new FibonacciRecursionAdapter(new Fibonacci());
+$fibonacciIteratorAdapter->setCount(11);
+$fibonacciIteratorAdapter->initialize();
+return $fibonacciIteratorAdapter->getSeries();
+
+```
+
+This will return [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55].
 
 License
 -------

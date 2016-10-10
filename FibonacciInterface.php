@@ -18,6 +18,13 @@ interface FibonacciInterface
     public function initialize():bool;
 
     /**
+     * Set count of series
+     * @param int $number
+     * @return mixed
+     */
+    public function setCount(int $number);
+
+    /**
      * Calculate fibonacci series and add to fibonacci series storage
      * @return bool
      */

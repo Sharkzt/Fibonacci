@@ -1,18 +1,18 @@
 <?php
 
-namespace Sharkzt\Fibonacci\Singleton;
+namespace Sharkzt\Fibonacci\Adapter;
 
 /**
- * Interface FibonacciIteratorInterface
- * @package Sharkzt\Fibonacci\Singleton
+ * Interface FibonacciAdapterInterface
+ * @package Sharkzt\Fibonacci\Adapter
  */
-interface FibonacciIteratorInterface
+interface FibonacciAdapterInterface
 {
     /**
      * Call calculation of fibonacci series of certain length
      * @return bool
      */
-    public function initialize():bool;
+    public function initialize();
 
     /**
      * Set count of series
@@ -20,12 +20,6 @@ interface FibonacciIteratorInterface
      * @return mixed
      */
     public function setCount(int $number);
-
-    /**
-     * Calculate fibonacci series and add to fibonacci series storage
-     * @return bool
-     */
-    public function iterate():bool;
 
     /**
      * Return fibonacci series
