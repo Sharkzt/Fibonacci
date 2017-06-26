@@ -6,7 +6,6 @@ use Sharkzt\Fibonacci\Singleton\FibonacciIteratorInterface;
 
 /**
  * Class FibonacciIteratorAdapter
- * @package Sharkzt\Fibonacci\Adapter
  */
 class FibonacciIteratorAdapter implements FibonacciAdapterInterface
 {
@@ -15,6 +14,10 @@ class FibonacciIteratorAdapter implements FibonacciAdapterInterface
      */
     public $fibonacci;
 
+    /**
+     * FibonacciIteratorAdapter constructor.
+     * @param FibonacciIteratorInterface $fibonacci
+     */
     public function __construct(FibonacciIteratorInterface $fibonacci)
     {
         $this->fibonacci = $fibonacci;
@@ -25,7 +28,8 @@ class FibonacciIteratorAdapter implements FibonacciAdapterInterface
      * @param int $number
      * @return mixed
      */
-    public function setCount(int $number = 0) {
+    public function setCount(int $number = 0)
+    {
         return $this->fibonacci->setCount($number);
     }
 
@@ -33,7 +37,8 @@ class FibonacciIteratorAdapter implements FibonacciAdapterInterface
     /**
      * @return bool
      */
-    public function initialize() {
+    public function initialize()
+    {
         return $this->fibonacci->initialize();
     }
 
@@ -41,7 +46,8 @@ class FibonacciIteratorAdapter implements FibonacciAdapterInterface
      * Return fibonacci series
      * @return array
      */
-    public function getSeries():array {
+    public function getSeries(): array
+    {
         return $this->fibonacci->getSeries();
     }
 }

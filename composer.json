@@ -2,7 +2,7 @@
   "name" : "sharkzt/fibonacci",
   "description" : "Fibonacci php classes implementation as singleton, strategy and adapter design patterns",
   "keywords": ["fibonacci", "php", "math"],
-  "version" : "1.2.0",
+  "version" : "1.2.1",
   "homepage": "https://github.com/Sharkzt/Fibonacci",
   "license" : "MIT",
   "authors" : [{

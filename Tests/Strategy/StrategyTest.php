@@ -2,11 +2,15 @@
 
 namespace Sharkzt\Fibonacci\Tests\Strategy;
 
+use PHPUnit\Framework\TestCase;
 use Sharkzt\Fibonacci\Singleton\FibonacciIterator;
 use Sharkzt\Fibonacci\Singleton\Fibonacci;
 use Sharkzt\Fibonacci\Strategy\FibonacciStrategy;
 
-class StrategyTest extends \PHPUnit_Framework_TestCase
+/**
+ * Class StrategyTest
+ */
+class StrategyTest extends TestCase
 {
     public function testClassConstructorIterationClassParam_WithFib_ReturnObject()
     {

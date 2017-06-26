@@ -2,9 +2,13 @@
 
 namespace Sharkzt\Fibonacci\Tests\Singleton;
 
+use PHPUnit\Framework\TestCase;
 use Sharkzt\Fibonacci\Singleton\Fibonacci;
 
-class SingletonTest extends \PHPUnit_Framework_TestCase
+/**
+ * Class SingletonTest
+ */
+class SingletonTest extends TestCase
 {
     public function testClassConstructorFibSeriesParam_With1_ReturnArray()
     {

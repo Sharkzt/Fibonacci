@@ -15,31 +15,31 @@ interface FibonacciInterface
      * Call calculation of fibonacci series of certain length
      * @return bool
      */
-    public function initialize():bool;
+    public function initialize(): bool;
 
     /**
      * Set count of series
      * @param int $number
      * @return mixed
      */
-    public function setCount(int $number);
+    public function setCount(int $number): FibonacciInterface;
 
     /**
      * Calculate fibonacci series and add to fibonacci series storage
      * @return bool
      */
-    public function iterate():bool;
+    public function iterate(): bool;
 
     /**
      * Calculate fibonacci number
      * @param int $number
      * @return int
      */
-    public function calculate(int $number):int;
+    public function calculate(int $number): int;
 
     /**
      * Return fibonacci series
      * @return array
      */
-    public function getSeries():array;
+    public function getSeries(): array;
 }

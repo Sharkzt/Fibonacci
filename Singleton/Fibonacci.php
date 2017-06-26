@@ -14,6 +14,7 @@ class Fibonacci implements FibonacciInterface
      * @var int
      */
     private $number;
+
     /**
      * @var array
      */
@@ -35,8 +36,10 @@ class Fibonacci implements FibonacciInterface
      * @param int $number
      * @return mixed
      */
-    public function setCount(int $number) {
+    public function setCount(int $number): FibonacciInterface
+    {
         $this->number = $number;
+
         return $this;
     }
 
@@ -44,9 +47,12 @@ class Fibonacci implements FibonacciInterface
      * Call calculation of fibonacci series of certain length
      * @return bool
      */
-    public function initialize():bool
+    public function initialize(): bool
     {
-        if ($this->number > 0) return $this->iterate();
+        if ($this->number > 0) {
+            return $this->iterate();
+        }
+
         return false;
     }
 
@@ -54,11 +60,12 @@ class Fibonacci implements FibonacciInterface
      * Calculate fibonacci series and push to fibonacci series array
      * @return bool
      */
-    public function iterate():bool
+    public function iterate(): bool
     {
         for ($i = 0; $i < $this->number; $i++) {
-            array_push($this->fibonacciSeries, $this->calculate($i));
+            $this->fibonacciSeries[] = $this->calculate($i);
         }
+
         return true;
     }
 
@@ -67,9 +74,12 @@ class Fibonacci implements FibonacciInterface
      * @param int $number
      * @return int
      */
-    public function calculate(int $number):int
+    public function calculate(int $number): int
     {
-        if ($number >= 0 && $number <= 1) return $number;
+        if ($number >= 0 && $number <= 1) {
+            return $number;
+        }
+
         return ($this->calculate($number - 1) + $this->calculate($number - 2));
     }
 
@@ -77,7 +87,7 @@ class Fibonacci implements FibonacciInterface
      * Return fibonacci series
      * @return array
      */
-    public function getSeries():array
+    public function getSeries(): array
     {
         return $this->fibonacciSeries;
     }

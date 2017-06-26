@@ -41,14 +41,18 @@ Code above will return [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55].
 ``` php
 //get fibonacci series via iterator adapter
 $fibonacciIteratorAdapter = new FibonacciIteratorAdapter(new FibonacciIterator());
-$fibonacciIteratorAdapter->setCount(11);
-$fibonacciIteratorAdapter->initialize();
+$fibonacciIteratorAdapter
+    ->setCount(11)
+    ->initialize();
+
 return $fibonacciIteratorAdapter->getSeries();
 
 //get fibonacci series via recursion adapter
 $fibonacciIteratorAdapter = new FibonacciRecursionAdapter(new Fibonacci());
-$fibonacciIteratorAdapter->setCount(11);
-$fibonacciIteratorAdapter->initialize();
+$fibonacciIteratorAdapter
+    ->setCount(11)
+    ->initialize();
+
 return $fibonacciIteratorAdapter->getSeries();
 
 ```
@@ -61,15 +65,19 @@ This will return [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55].
 //get fibonacci series with iteration strategy
 $fibonacciStrategy = new FibonacciStrategy(new Fibonacci(), new FibonacciIterator());
 $fibonacciStrategy->setStrategy($fibonacciStrategy->iterationStrategy);
-$fibonacciStrategy->setCount(11);
-$fibonacciStrategy->initialize();
+$fibonacciStrategy
+    ->setCount(11)
+    ->initialize();
+
 return $fibonacciStrategy->getSeries();
 
 //get fibonacci series with recursion strategy
 $fibonacciStrategy = new FibonacciStrategy(new Fibonacci(), new FibonacciIterator());
 $fibonacciStrategy->setStrategy($fibonacciStrategy->recursionStrategy);
-$fibonacciStrategy->setCount(11);
-$fibonacciStrategy->initialize();
+$fibonacciStrategy
+    ->setCount(11)
+    ->initialize();
+
 return $fibonacciStrategy->getSeries();
 
 ```

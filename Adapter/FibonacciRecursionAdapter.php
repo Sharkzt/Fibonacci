@@ -6,7 +6,6 @@ use Sharkzt\Fibonacci\FibonacciInterface;
 
 /**
  * Class FibonacciRecursionAdapter
- * @package Sharkzt\Fibonacci\Adapter
  */
 class FibonacciRecursionAdapter implements FibonacciAdapterInterface
 {
@@ -15,6 +14,10 @@ class FibonacciRecursionAdapter implements FibonacciAdapterInterface
      */
     public $fibonacci;
 
+    /**
+     * FibonacciRecursionAdapter constructor.
+     * @param FibonacciInterface $fibonacci
+     */
     public function __construct(FibonacciInterface $fibonacci)
     {
         $this->fibonacci = $fibonacci;
@@ -25,7 +28,8 @@ class FibonacciRecursionAdapter implements FibonacciAdapterInterface
      * @param int $number
      * @return mixed
      */
-    public function setCount(int $number = 0) {
+    public function setCount(int $number = 0)
+    {
         return $this->fibonacci->setCount($number);
     }
 
@@ -33,7 +37,8 @@ class FibonacciRecursionAdapter implements FibonacciAdapterInterface
     /**
      * @return bool
      */
-    public function initialize() {
+    public function initialize()
+    {
         return $this->fibonacci->initialize();
     }
 
@@ -41,7 +46,8 @@ class FibonacciRecursionAdapter implements FibonacciAdapterInterface
      * Return fibonacci series
      * @return array
      */
-    public function getSeries():array {
+    public function getSeries(): array
+    {
         return $this->fibonacci->getSeries();
     }
 }

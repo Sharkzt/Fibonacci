@@ -2,10 +2,15 @@
 
 namespace Sharkzt\Fibonacci\Tests\Adapter;
 
+use PHPUnit\Framework\TestCase;
 use Sharkzt\Fibonacci\Adapter\FibonacciRecursionAdapter;
 use Sharkzt\Fibonacci\Singleton\Fibonacci;
 
-class RecursionAdapterTest extends \PHPUnit_Framework_TestCase
+/**
+ * Class RecursionAdapterTest
+ * @package Sharkzt\Fibonacci\Tests\Adapter
+ */
+class RecursionAdapterTest extends TestCase
 {
     public function testClassConstructorFibParam_WithFib_ReturnObject()
     {

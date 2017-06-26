@@ -2,10 +2,14 @@
 
 namespace Sharkzt\Fibonacci\Tests\Adapter;
 
+use PHPUnit\Framework\TestCase;
 use Sharkzt\Fibonacci\Adapter\FibonacciIteratorAdapter;
 use Sharkzt\Fibonacci\Singleton\FibonacciIterator;
 
-class IteratorAdapterTest extends \PHPUnit_Framework_TestCase
+/**
+ * Class IteratorAdapterTest
+ */
+class IteratorAdapterTest extends TestCase
 {
     public function testClassConstructorFibParam_WithFib_ReturnObject()
     {

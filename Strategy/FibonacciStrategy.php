@@ -6,24 +6,31 @@ use Sharkzt\Fibonacci\Adapter\FibonacciAdapterInterface;
 use Sharkzt\Fibonacci\FibonacciInterface;
 use Sharkzt\Fibonacci\Singleton\FibonacciIteratorInterface;
 
+/**
+ * Class FibonacciStrategy
+ */
 class FibonacciStrategy implements FibonacciAdapterInterface, FibonacciStrategyInterface
 {
     /**
      * @var FibonacciInterface
      */
     public $iterationClass;
+
     /**
      * @var FibonacciInterface
      */
     public $recursionClass;
+
     /**
      * @var FibonacciInterface
      */
     public $strategyClass;
+
     /**
      * @var string
      */
     public $recursionStrategy;
+
     /**
      * @var string
      */
@@ -31,15 +38,17 @@ class FibonacciStrategy implements FibonacciAdapterInterface, FibonacciStrategyI
 
     /**
      * FibonacciStrategy constructor.
-     * @param FibonacciInterface $recursionClass
+     * @param FibonacciInterface         $recursionClass
      * @param FibonacciIteratorInterface $iterationClass
-     * @param string $recursion
-     * @param string $iteration
+     * @param string                     $recursion
+     * @param string                     $iteration
      */
-    public function __construct(FibonacciInterface $recursionClass, FibonacciIteratorInterface $iterationClass,
-                                string $recursion = 'recursion',
-                                string $iteration = 'iteration')
-    {
+    public function __construct(
+        FibonacciInterface $recursionClass,
+        FibonacciIteratorInterface $iterationClass,
+        string $recursion = 'recursion',
+        string $iteration = 'iteration'
+    ) {
         $this->recursionClass = $recursionClass;
         $this->iterationClass = $iterationClass;
         $this->recursionStrategy = $recursion;
@@ -51,7 +60,7 @@ class FibonacciStrategy implements FibonacciAdapterInterface, FibonacciStrategyI
      * @param string $type
      * @return bool
      */
-    public function setStrategy(string $type = 'recursion'):bool
+    public function setStrategy(string $type = 'recursion'): bool
     {
         if ($type === $this->recursionStrategy) {
             $this->strategyClass = $this->recursionClass;
@@ -60,6 +69,7 @@ class FibonacciStrategy implements FibonacciAdapterInterface, FibonacciStrategyI
         } else {
             return false;
         }
+
         return true;
     }
 
@@ -68,7 +78,8 @@ class FibonacciStrategy implements FibonacciAdapterInterface, FibonacciStrategyI
      * @param int $number
      * @return mixed
      */
-    public function setCount(int $number = 0) {
+    public function setCount(int $number = 0)
+    {
         return $this->strategyClass->setCount($number);
     }
 

@@ -2,9 +2,10 @@
 
 namespace Sharkzt\Fibonacci\Singleton;
 
+use Sharkzt\Fibonacci\FibonacciInterface;
+
 /**
  * Class FibonacciIterator
- * @package Sharkzt\Fibonacci\Singleton
  */
 class FibonacciIterator implements FibonacciIteratorInterface
 {
@@ -12,14 +13,17 @@ class FibonacciIterator implements FibonacciIteratorInterface
      * @var int
      */
     private $number;
+
     /**
      * @var array
      */
     private $fibonacciSeries;
+
     /**
      * @var int
      */
     private $firstNumber;
+
     /**
      * @var int
      */
@@ -42,8 +46,10 @@ class FibonacciIterator implements FibonacciIteratorInterface
      * @param int $number
      * @return mixed
      */
-    public function setCount(int $number) {
+    public function setCount(int $number): FibonacciInterface
+    {
         $this->number = $number;
+
         return $this;
     }
 
@@ -51,8 +57,12 @@ class FibonacciIterator implements FibonacciIteratorInterface
      * Call calculation of fibonacci series of certain length
      * @return bool
      */
-    public function initialize():bool {
-        if ($this->number > 0) return $this->iterate();
+    public function initialize(): bool
+    {
+        if (0 < $this->number) {
+            return $this->iterate();
+        }
+
         return false;
     }
 
@@ -60,22 +70,32 @@ class FibonacciIterator implements FibonacciIteratorInterface
      * Calculate fibonacci series and push to fibonacci series array
      * @return bool
      */
-    public function iterate():bool
+    public function iterate(): bool
     {
         for ($i = 0; $i < $this->number; $i++) {
             $currentNumber = $this->firstNumber + $this->secondNumber;
             $this->firstNumber = $this->secondNumber;
             $this->secondNumber = $currentNumber;
-            array_push($this->fibonacciSeries, $currentNumber);
+            $this->fibonacciSeries[] = $currentNumber;
         }
+
         return true;
+    }
+
+    /**
+     * @param int $number
+     * @return int
+     */
+    public function calculate(int $number): int
+    {
+        return 0;
     }
 
     /**
      * Return fibonacci series
      * @return array
      */
-    public function getSeries():array
+    public function getSeries(): array
     {
         return $this->fibonacciSeries;
     }
