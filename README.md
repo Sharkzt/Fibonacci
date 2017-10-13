@@ -3,7 +3,7 @@ Fibonacci
 
 **Fibonacci** php classes implementation as singleton, strategy and adapter design patterns
 
-[![Build Status](https://travis-ci.org/sharkzt/Fibonacci.svg?branch=master)](https://travis-ci.org/sharkzt/Fibonacci)
+[![Build Status](https://travis-ci.org/Sharkzt/Fibonacci.svg?branch=master)](https://travis-ci.org/Sharkzt/Fibonacci)
 [![Coverage Status](https://coveralls.io/repos/github/Sharkzt/Fibonacci/badge.svg)](https://coveralls.io/github/Sharkzt/Fibonacci)
 
 Installation
