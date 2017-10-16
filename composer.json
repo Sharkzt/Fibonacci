@@ -1,5 +1,5 @@
 {
-  "name" : "Sharkzt/fibonacci",
+  "name" : "sharkzt/fibonacci",
   "description" : "Fibonacci php classes implementation as singleton, strategy and adapter design patterns",
   "keywords": ["fibonacci", "php", "math"],
   "version" : "1.2.1",
